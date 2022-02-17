@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test ground</title>
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-top: 0
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            vertical-align: top;
+            overflow: hidden;
+        }
+
+        .aqua {
+            background-color: aqua;
+        }
+
+        .crimson {
+            background-color: crimson;
+        }
+
+        .crimson img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .truncate {
+            max-width: 200px;
+        }
+
+        .truncate p {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .navbar {
+            height: 80px;
+            background-color: darkkhaki;
+        }
+
+        .container {
+            height: 40vh;
+            margin-top: 6rem;
+            background-color: #ebebeb;
+            position: relative
+                /* very important to contain the inner absolute elements! */
+            ;
+        }
+
+        /* this positions the element .crimson exactly to the bottom - right corner of the parent .container */
+        .container .crimson {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        .container .aqua {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+        }
+
+
+        main {
+            padding: 0 6rem;
+
+            min-height: calc(200vh - 80px - 200px - 6rem)
+        }
+
+        footer {
+
+            padding: 20px;
+            height: 200px;
+            color: white;
+            background-color: rgb(24, 24, 24);
+        }
+    </style>
+</head>
+
+<body>
+    <div style="height: 20vh"></div>
+    <nav class="navbar"></nav>
+    <main>
+        <div class="container">
+            <div class="box crimson"></div>
+            <div class="box aqua"></div>
+        </div>
+    </main>
+    <footer> Strive school </footer>
+    <!-- <div class="box aqua">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos placeat deserunt autem
+        nam corrupti modi iusto? Laborum, rem. Debitis corrupti ab explicabo quae repudiandae error reprehenderit
+        mollitia veniam! Exercitationem, quasi. 
+
+        <div>
+            <img src="https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                alt="room image">
+        </div>
+    </div>
+    <div class="box crimson"><img
+            src="https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+            alt="room image"></div>
+
+    <p>Lorem ipsum <a href="#">dolor</a> sit amet consectetur, adipisicing elit. <span class="crimson">A at possimus
+            culpa eos provident
+            quidem
+            assumenda enim mollitia ex fugiat odio odit</span>, commodi <strong>labore</strong> <b>ullam</b> <i>amet</i>
+        <u>fuga?</u>
+        Id,
+        minus voluptatem?
+    </p>
+
+    <div class="truncate">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut molestiae et delectus repellendus ipsum neque
+            beatae, cumque in, quia aperiam illo temporibus, quaerat laboriosam. Explicabo eligendi ab ad dolores
+            numquam.</p>
+    </div>
+
+    <button>button</button>
+    <button>button</button>
+ -->
+
+
+
+
+</body>
+
+</html>
