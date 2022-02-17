@@ -5,6 +5,49 @@
 body {
   color: white;
   background-color: #0f171e;
+  /* animation: fade-in 3s 2s backwards ease-in-out; */
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.gradient {
+  background: linear-gradient(270deg, rgb(6, 209, 114) 0%, rgb(94, 6, 209) 50%, rgb(209, 6, 101) 100%);
+  background-size: 400% 400%;
+}
+
+@keyframes gradientSlide {
+  0% {
+    background-position: 5% 50%;
+  }
+  50% {
+    background-position: 90% 50%;
+  }
+  100% {
+    background-position: 55 50%;
+  }
+}
+
+#toaster {
+  position: absolute;
+  top: 80px;
+  right: 10px;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  box-shadow: 0 10px 40px rgb(0 0 0 / 30%);
+  animation: gradientSlide 4s ease infinite;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+#toaster.show {
+  opacity: 1;
 }
 
 .bg-strive-dark {
@@ -63,6 +106,12 @@ body {
   vertical-align: middle;
   font-size: 19px;
   line-height: 24px;
+
+  transition: color 2s;
+}
+
+.color-coral {
+  color: coral;
 }
 
 /* ADDED AFTER THE M2-D4 LESSON */
@@ -125,18 +174,26 @@ a:hover {
   padding: 48px 1rem 1rem;
   opacity: 0;
   transition: opacity 0.2s, transform 0.3s, padding 0.3s 0.3s;
+  pointer-events: none;
   z-index: 1;
 }
 
+.strive-card .infos-container .play-btn:not(:hover) {
+  background: black;
+}
 .strive-card .infos-container .play-btn {
   position: relative;
-  background-color: black;
   width: 40px;
   height: 40px;
   border: 2px solid white;
   border-radius: 50%;
   transform: translateX(-100px);
   transition: transform 0.25s cubic-bezier(0.13, 0.99, 0.65, 0.99) 0.25s;
+}
+
+.strive-card .infos-container .play-btn:hover {
+  border-color: transparent;
+  animation: gradientSlide 4s ease infinite;
 }
 
 .strive-card .infos-container .play-btn::before {
@@ -241,6 +298,7 @@ a:hover {
 .strive-card:hover .infos-container {
   transform: translateY(-48px);
   padding: 48px 1.2rem 1rem;
+  pointer-events: unset;
   opacity: 1;
 }
 .strive-card:hover .infos-container > h6,
