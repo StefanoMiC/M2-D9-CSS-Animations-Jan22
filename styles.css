@@ -48,14 +48,14 @@ body {
 .carousel-control-prev {
   width: 16px;
 }
-
+/* 
 .carousel-control-prev {
   left: -16px;
 }
 
 .carousel-control-next {
   right: -16px;
-}
+} */
 
 .title-prime {
   display: inline-block;
@@ -117,22 +117,102 @@ a:hover {
 
 .strive-card .infos-container {
   position: absolute;
+  overflow: hidden;
   background: linear-gradient(rgba(27, 37, 48, 0), #1b2530 48px);
-  transform: translateY(-48px);
+  transform: translateY(-50px);
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
   padding: 48px 1rem 1rem;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.3s, padding 0.3s 0.3s;
   z-index: 1;
+}
+
+.strive-card .infos-container .play-btn {
+  position: relative;
+  background-color: black;
+  width: 40px;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 50%;
+  transform: translateX(-100px);
+  transition: transform 0.25s cubic-bezier(0.13, 0.99, 0.65, 0.99) 0.25s;
+}
+
+.strive-card .infos-container .play-btn::before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 1px;
+  margin: auto;
+  border-style: solid;
+  border-width: 7px 0 7px 12px;
+  border-color: transparent transparent transparent white;
+}
+
+.strive-card .infos-container > div > .play-btn + h6 {
+  transform: translateX(-47px);
+  transition: transform 0.2s 0.2s;
+}
+
+.strive-card .infos-container .plus-btn {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  transform: translateX(60px) rotate(160deg);
+  transition: transform 0.4s 0.25s;
+}
+
+.strive-card .infos-container .plus-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 2px;
+  background-color: white;
+}
+
+.strive-card .infos-container .plus-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: 2px;
+  background-color: white;
+}
+
+.strive-card .infos-container > h6,
+.strive-card .infos-container > p,
+.strive-card .infos-container .movie-footer {
+  opacity: 0;
+  transition: opacity 0.6s;
 }
 
 .strive-card .infos-container > h6 {
   font-weight: 700;
 }
 
+.strive-card .infos-container .prime-title {
+  color: var(--prime-color);
+
+  transition-delay: 0.2s;
+}
+
 .strive-card .infos-container > h6:nth-of-type(2):not(.prime-title) {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  transition-delay: 0.25s;
 }
 
 .strive-card .infos-container p {
@@ -140,14 +220,33 @@ a:hover {
   line-height: 1.2;
   font-weight: 600;
 
+  transition-delay: 0.3s;
+
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-.prime-title {
-  color: var(--prime-color);
+.strive-card .infos-container .movie-footer {
+  transition-delay: 0.35s;
+}
+
+.strive-card:hover .infos-container .play-btn,
+.strive-card:hover .infos-container > div > .play-btn + h6,
+.strive-card:hover .infos-container .plus-btn {
+  transform: translateX(0) rotate(0deg);
+}
+
+.strive-card:hover .infos-container {
+  transform: translateY(-48px);
+  padding: 48px 1.2rem 1rem;
+  opacity: 1;
+}
+.strive-card:hover .infos-container > h6,
+.strive-card:hover .infos-container > p,
+.strive-card:hover .infos-container .movie-footer {
+  opacity: 1;
 }
 
 footer {
